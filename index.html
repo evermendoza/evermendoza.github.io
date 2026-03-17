@@ -324,6 +324,8 @@ nav {
 }
 .lang-card:hover { background:#161616; }
 .lang-flags { font-size:2.2rem; margin-bottom:0.8rem; display:block; letter-spacing:0.15em; line-height:1.3; }
+.lang-flags-row { display:flex; gap:0.5rem; align-items:center; margin-bottom:0.8rem; }
+.flag-img { width:40px; height:auto; border-radius:2px; display:block; }
 .lang-card-name {
   font-family:'Syne',sans-serif; font-size:0.95rem;
   font-weight:700; color:var(--white); margin-bottom:0.25rem;
@@ -825,32 +827,42 @@ footer p { font-size:0.72rem; color:rgba(255,255,255,0.2); font-weight:300; }
 
 <!-- BILINGUAL -->
 <section class="bilingual reveal" id="bilingual">
-  <div class="section-label">Bilingual Advantage</div>
-  <h2 class="section-title" style="color:var(--white);">Your customers speak Spanish.<br>So do I.</h2>
+  <div class="section-label">English · Spanish</div>
+  <h2 class="section-title" style="color:var(--white);">Quieres tu contenido en Español.<br>Yo también puedo hacerlo.</h2>
   <div class="bilingual-grid">
     <div class="bilingual-text">
-      <p>Atlanta has one of the fastest-growing Latino communities in the US. <strong>Most web developers can't reach that market.</strong> I build your website, write your content, and manage your social media in both English and Spanish — no translator, no extra cost.</p>
-      <p><em>Hablo tu idioma — vengas de México, España, Paraguay o de donde seas. Tu negocio merece llegar a todos.</em></p>
+      <p>The Atlanta area has one of the fastest-growing Latino communities in the US. <strong>Having someone who can reach both markets is crucial for you to compete in this field.</strong> I build your website, write your content, and manage your social media in both English and Spanish.</p>
+      <p><em>Contenidos y publicidad en Ingles y Tu negocio debe llegar a todos.</em></p>
     </div>
     <div class="lang-grid">
       <div class="lang-card">
-        <span class="lang-flags">🇺🇸</span>
+        <div class="lang-flags-row">
+          <img src="https://flagcdn.com/w40/us.png" alt="USA" class="flag-img">
+        </div>
         <div class="lang-card-name">English</div>
         <div class="lang-card-level">Fluent</div>
       </div>
       <div class="lang-card">
-        <span class="lang-flags">🇲🇽 🇪🇸 🇵🇾</span>
+        <div class="lang-flags-row">
+          <img src="https://flagcdn.com/w40/mx.png" alt="Mexico" class="flag-img">
+          <img src="https://flagcdn.com/w40/es.png" alt="Spain" class="flag-img">
+          <img src="https://flagcdn.com/w40/py.png" alt="Paraguay" class="flag-img">
+        </div>
         <div class="lang-card-name">Spanish</div>
         <div class="lang-card-level">Native</div>
-        <div class="lang-card-note">Mexico · Spain · Paraguay</div>
+        <div class="lang-card-note">Mexico · Spain</div>
       </div>
       <div class="lang-card">
-        <span class="lang-flags">🇧🇷</span>
+        <div class="lang-flags-row">
+          <img src="https://flagcdn.com/w40/br.png" alt="Brazil" class="flag-img">
+        </div>
         <div class="lang-card-name">Portuguese</div>
         <div class="lang-card-level">Fluent</div>
       </div>
       <div class="lang-card">
-        <span class="lang-flags">🇮🇹</span>
+        <div class="lang-flags-row">
+          <img src="https://flagcdn.com/w40/it.png" alt="Italy" class="flag-img">
+        </div>
         <div class="lang-card-name">Italian</div>
         <div class="lang-card-level">Beginner</div>
       </div>
