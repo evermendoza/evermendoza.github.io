@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ever Mendoza — Web & Digital Services | Atlanta, GA</title>
+<meta name="description" content="Bilingual web developer and digital marketing professional based in Atlanta, GA. Websites, social media, and brand presence for small businesses. English & Spanish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #071c3b;
+  --mustard: #ecb01a;
+  --mustard-dark: #c99210;
+  --black:   #0a0a0a;
+  --white:   #ffffff;
+  --cream:   #f8f5ef;
+  --gray:    #f0ede7;
+  --muted:   #6b6860;
+  --text:    #1a1a1a;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Epilogue',sans-serif; background:var(--white); color:var(--text); overflow-x:hidden; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem 3.5rem;
+  background:var(--navy);
+  border-bottom:1px solid rgba(236,176,26,0.15);
+}
+.nav-logo {
+  font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800;
+  color:var(--mustard); text-decoration:none; letter-spacing:0.02em;
+}
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a {
+  color:rgba(255,255,255,0.55); text-decoration:none;
+  font-size:0.8rem; font-weight:400; letter-spacing:0.07em; text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-links a:hover { color:var(--mustard); }
+.nav-cta {
+  background:var(--mustard) !important; color:var(--black) !important;
+  padding:0.5rem 1.3rem; font-weight:600 !important;
+  transition:background 0.2s !important;
+}
+.nav-cta:hover { background:var(--mustard-dark) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh; background:var(--navy);
+  display:grid; grid-template-columns:55% 45%;
+  padding-top:64px; overflow:hidden; position:relative;
+}
+.hero::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(236,176,26,0.05) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero-left {
+  padding:5rem 4rem 4rem 5.5rem;
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative; z-index:2;
+}
+.hero-available {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  border:1px solid rgba(236,176,26,0.35);
+  color:var(--mustard); padding:0.4rem 1rem;
+  font-size:0.7rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase;
+  margin-bottom:2rem; width:fit-content;
+}
+.hero-available::before {
+  content:''; width:7px; height:7px; border-radius:50%;
+  background:#4caf50; animation:pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+.hero-name {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3.2rem,6vw,5.8rem);
+  font-weight:800; color:var(--white);
+  line-height:0.93; letter-spacing:-0.025em;
+  margin-bottom:1.2rem;
+}
+.hero-name .mustard { color:var(--mustard); }
+
+.hero-tagline {
+  font-size:1.05rem; color:rgba(255,255,255,0.5);
+  font-weight:300; line-height:1.7; max-width:460px;
+  margin-bottom:0.6rem;
+}
+.hero-tagline strong { color:rgba(255,255,255,0.85); font-weight:500; }
+
+.hero-tagline-es {
+  font-size:0.88rem; color:rgba(236,176,26,0.6);
+  font-weight:300; font-style:italic;
+  max-width:460px; margin-bottom:2.5rem;
+}
+
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem; }
+.btn {
+  display:inline-block; padding:0.9rem 2.2rem;
+  font-family:'Epilogue',sans-serif; font-size:0.88rem; font-weight:500;
+  text-decoration:none; cursor:pointer; border:none; transition:all 0.22s;
+}
+.btn-mustard { background:var(--mustard); color:var(--black); }
+.btn-mustard:hover { background:var(--mustard-dark); transform:translateY(-2px); }
+.btn-ghost { background:transparent; border:1px solid rgba(255,255,255,0.2); color:var(--white); }
+.btn-ghost:hover { border-color:var(--mustard); color:var(--mustard); }
+
+.hero-facts {
+  display:flex; gap:2.5rem; flex-wrap:wrap;
+  padding-top:2rem; border-top:1px solid rgba(255,255,255,0.07);
+}
+.hero-fact-num {
+  font-family:'Syne',sans-serif; font-size:1.8rem;
+  font-weight:800; color:var(--mustard);
+}
+.hero-fact-label { font-size:0.7rem; color:rgba(255,255,255,0.38); margin-top:0.2rem; line-height:1.4; }
+
+.hero-right {
+  position:relative; display:flex;
+  align-items:flex-end; justify-content:center; overflow:hidden;
+}
+.hero-photo { width:100%; height:100%; object-fit:cover; object-position:center top; }
+.hero-photo-placeholder {
+  width:100%; height:100%; min-height:520px;
+  background:linear-gradient(160deg,#0d2545 0%,#071c3b 100%);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:1rem;
+}
+.hero-photo-placeholder .initials {
+  width:130px; height:130px; border-radius:50%;
+  background:rgba(236,176,26,0.08);
+  border:2px solid rgba(236,176,26,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Syne',sans-serif; font-size:2.8rem;
+  font-weight:800; color:var(--mustard); opacity:0.5;
+}
+.hero-photo-placeholder p {
+  font-size:0.7rem; color:rgba(255,255,255,0.18);
+  letter-spacing:0.1em; text-transform:uppercase; text-align:center; padding:0 2rem;
+}
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to right,var(--navy) 0%,transparent 30%),
+             linear-gradient(to top,var(--navy) 0%,transparent 20%);
+  pointer-events:none;
+}
+.hero-location {
+  position:absolute; bottom:1.5rem; right:1.5rem;
+  background:rgba(7,28,59,0.9); border:1px solid rgba(236,176,26,0.2);
+  padding:0.6rem 1rem; font-size:0.72rem; color:rgba(255,255,255,0.5);
+}
+.hero-location span { color:var(--mustard); }
+
+/* ── PROOF BAR ── */
+.proof-bar {
+  background:var(--black);
+  padding:1.1rem 5rem;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem;
+  border-bottom:2px solid var(--mustard);
+}
+.proof-item {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.78rem; color:rgba(255,255,255,0.55);
+}
+.proof-item::before { content:'✓'; color:var(--mustard); font-weight:700; }
+
+/* ── SECTIONS ── */
+.section-wrap { padding:5.5rem 5.5rem; }
+.section-label {
+  font-size:0.67rem; letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--mustard); font-weight:600; margin-bottom:0.7rem;
+}
+.section-title {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.8rem,3vw,2.7rem);
+  font-weight:800; line-height:1.08; letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.section-sub {
+  font-size:0.95rem; color:var(--muted);
+  font-weight:300; line-height:1.75; max-width:560px;
+}
+
+/* ── SERVICES ── */
+.services { background:var(--white); }
+.services-intro {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:4rem; align-items:end; margin-bottom:3rem;
+}
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px; background:#e8e4dc; border:1px solid #e8e4dc;
+}
+.service-card {
+  background:var(--white); padding:2.2rem 2rem;
+  transition:background 0.25s; position:relative; overflow:hidden;
+}
+.service-card::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:3px; background:var(--mustard);
+  transition:width 0.35s ease;
+}
+.service-card:hover { background:var(--cream); }
+.service-card:hover::after { width:100%; }
+.service-icon { font-size:1.5rem; margin-bottom:1rem; display:block; }
+.service-name {
+  font-family:'Syne',sans-serif; font-size:1rem;
+  font-weight:700; color:var(--navy); margin-bottom:0.7rem;
+}
+.service-desc {
+  font-size:0.855rem; line-height:1.65;
+  color:var(--muted); font-weight:300; margin-bottom:0.4rem;
+}
+.service-desc-es {
+  font-size:0.78rem; color:rgba(236,176,26,0.7);
+  font-style:italic; font-weight:300; margin-bottom:1.2rem;
+}
+.service-deliverables { list-style:none; margin-bottom:1.5rem; }
+.service-deliverables li {
+  font-size:0.8rem; color:var(--text);
+  padding:0.22rem 0; padding-left:1rem; position:relative;
+}
+.service-deliverables li::before {
+  content:'→'; position:absolute; left:0;
+  color:var(--mustard); font-size:0.72rem;
+}
+.service-price {
+  font-family:'Syne',sans-serif; font-size:0.95rem;
+  font-weight:700; color:var(--navy);
+  padding-top:1rem; border-top:1px solid #e8e4dc;
+}
+.service-price span {
+  font-weight:300; font-size:0.75rem;
+  color:var(--muted); font-family:'Epilogue',sans-serif;
+}
+
+/* ── SHOULD SECTION ── */
+.should { background:var(--navy); padding:5.5rem 5.5rem; }
+.should .section-title { color:var(--white); }
+.should-sub {
+  font-size:1rem; color:rgba(255,255,255,0.45);
+  font-weight:300; line-height:1.7; max-width:640px;
+  margin-bottom:3.5rem; margin-top:0.8rem;
+}
+.should-sub strong { color:rgba(255,255,255,0.8); font-weight:500; }
+.should-categories {
+  display:grid; grid-template-columns:1fr 1fr; gap:3rem;
+}
+.should-cat-label {
+  font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--mustard); font-weight:600; margin-bottom:1.2rem;
+  padding-bottom:0.7rem; border-bottom:1px solid rgba(236,176,26,0.2);
+}
+.should-items { display:flex; flex-direction:column; gap:0.8rem; }
+.should-item {
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:1rem 1.3rem;
+  transition:all 0.22s; text-decoration:none;
+  cursor:default;
+}
+.should-item:hover {
+  background:rgba(236,176,26,0.06);
+  border-color:rgba(236,176,26,0.25);
+}
+.should-item-left { display:flex; align-items:center; gap:0.8rem; }
+.should-item-icon { font-size:1.3rem; }
+.should-item-name {
+  font-family:'Syne',sans-serif; font-size:0.9rem;
+  font-weight:700; color:var(--white);
+}
+.should-item-name-es {
+  font-size:0.72rem; color:rgba(255,255,255,0.35);
+  font-weight:300; margin-top:0.1rem;
+}
+.should-item-cta {
+  font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--mustard); font-weight:600; white-space:nowrap;
+  opacity:0; transition:opacity 0.22s;
+}
+.should-item:hover .should-item-cta { opacity:1; }
+.should-bottom {
+  margin-top:3rem; padding:2rem 2.5rem;
+  background:var(--mustard);
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+}
+.should-bottom p {
+  font-size:1rem; font-weight:500; color:var(--black);
+  max-width:500px; line-height:1.5;
+}
+.should-bottom p em { font-style:italic; }
+.btn-dark { background:var(--black); color:var(--white); }
+.btn-dark:hover { background:#222; }
+
+/* ── BILINGUAL ── */
+.bilingual { background:var(--black); padding:5.5rem 5.5rem; }
+.bilingual .section-title { color:var(--white); }
+.bilingual-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem;
+  align-items:center; margin-top:2.5rem;
+}
+.bilingual-text p {
+  font-size:0.95rem; color:rgba(255,255,255,0.45);
+  font-weight:300; line-height:1.75; margin-top:1rem;
+}
+.bilingual-text p strong { color:var(--mustard); font-weight:500; }
+.bilingual-text p em { color:rgba(255,255,255,0.65); font-style:italic; }
+.lang-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
+  background:rgba(236,176,26,0.12);
+}
+.lang-card {
+  background:#0f0f0f; padding:2rem 1.5rem;
+  transition:background 0.25s;
+}
+.lang-card:hover { background:#161616; }
+.lang-flags { font-size:1.5rem; margin-bottom:0.8rem; display:block; letter-spacing:0.1em; }
+.lang-card-name {
+  font-family:'Syne',sans-serif; font-size:0.95rem;
+  font-weight:700; color:var(--white); margin-bottom:0.25rem;
+}
+.lang-card-level {
+  font-size:0.65rem; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--mustard);
+}
+.lang-card-note {
+  font-size:0.75rem; color:rgba(255,255,255,0.3);
+  font-weight:300; margin-top:0.4rem; font-style:italic;
+}
+
+/* ── ABOUT ── */
+.about { background:var(--white); }
+.about-grid {
+  display:grid; grid-template-columns:1fr 1.6fr;
+  gap:5rem; align-items:start; margin-top:3rem;
+}
+.about-photo-wrap { position:relative; }
+.about-photo { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; }
+.about-photo-placeholder {
+  width:100%; aspect-ratio:3/4; background:var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  border:1px dashed #ddd;
+}
+.about-photo-placeholder p { font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.about-badge {
+  position:absolute; bottom:-1rem; right:-1rem;
+  background:var(--mustard); color:var(--black);
+  padding:0.8rem 1rem;
+  font-family:'Syne',sans-serif; font-size:0.75rem;
+  font-weight:800; text-transform:uppercase;
+  letter-spacing:0.06em; max-width:140px;
+  text-align:center; line-height:1.4;
+}
+.about-content p {
+  font-size:0.95rem; line-height:1.8;
+  color:var(--muted); font-weight:300; margin-bottom:1rem;
+}
+.about-content p strong { color:var(--text); font-weight:500; }
+.about-content p.es {
+  font-size:0.88rem; color:rgba(7,28,59,0.5);
+  font-style:italic; border-left:2px solid var(--mustard);
+  padding-left:1rem; margin-top:1.5rem;
+}
+.creds-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+.cred-item {
+  background:var(--mustard); padding:1rem 1.2rem;
+}
+.cred-title {
+  font-family:'Syne',sans-serif; font-size:0.8rem;
+  font-weight:800; color:var(--black); margin-bottom:0.2rem;
+}
+.cred-sub { font-size:0.7rem; color:rgba(0,0,0,0.55); font-weight:300; }
+
+/* ── WRITING ── */
+.writing { background:var(--cream); padding:5.5rem 5.5rem; }
+.writing-header {
+  display:flex; justify-content:space-between;
+  align-items:flex-end; margin-bottom:2.5rem; flex-wrap:wrap; gap:1rem;
+}
+.read-more {
+  font-size:0.78rem; color:var(--navy); text-decoration:none;
+  font-weight:600; letter-spacing:0.07em; text-transform:uppercase;
+  border-bottom:1px solid var(--navy); padding-bottom:2px;
+  transition:color 0.2s, border-color 0.2s;
+}
+.read-more:hover { color:var(--mustard); border-color:var(--mustard); }
+.articles-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.article-item {
+  text-decoration:none; color:inherit; padding:1.5rem;
+  background:var(--white); display:block;
+  border-bottom:2px solid transparent;
+  transition:border-color 0.2s, transform 0.2s;
+}
+.article-item:hover { border-bottom-color:var(--mustard); transform:translateY(-3px); }
+.article-lang-tag {
+  font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--mustard); font-weight:600; margin-bottom:0.6rem;
+}
+.article-heading {
+  font-family:'Syne',sans-serif; font-size:0.92rem;
+  font-weight:700; color:var(--navy); line-height:1.3; margin-bottom:0.6rem;
+}
+.article-snippet { font-size:0.8rem; color:var(--muted); font-weight:300; line-height:1.6; }
+
+/* ── CONTACT ── */
+.contact { background:var(--navy); }
+.contact .section-title { color:var(--white); }
+.contact-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; margin-top:3rem; align-items:start;
+}
+.contact-left p {
+  font-size:0.95rem; line-height:1.8;
+  color:rgba(255,255,255,0.45); font-weight:300; margin-bottom:2rem;
+}
+.contact-left p strong { color:rgba(255,255,255,0.8); font-weight:500; }
+.contact-items { display:flex; flex-direction:column; gap:0.8rem; }
+.contact-item {
+  display:flex; align-items:center; gap:1rem;
+  color:rgba(255,255,255,0.55); text-decoration:none;
+  font-size:0.88rem; padding:0.9rem 1.2rem;
+  border:1px solid rgba(255,255,255,0.07);
+  transition:all 0.22s; font-weight:300;
+}
+.contact-item:hover { border-color:var(--mustard); color:var(--mustard); background:rgba(236,176,26,0.05); }
+.contact-item svg { width:18px; height:18px; flex-shrink:0; fill:currentColor; }
+.contact-right { display:flex; flex-direction:column; gap:1rem; }
+.lang-toggle { display:flex; gap:0.5rem; margin-bottom:0.5rem; }
+.lang-btn {
+  font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+  font-weight:700; padding:0.4rem 1rem; border:none; cursor:pointer;
+  font-family:'Epilogue',sans-serif; transition:all 0.2s;
+}
+.lang-btn.active { background:var(--mustard); color:var(--black); }
+.lang-btn:not(.active) { background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.35); }
+.lang-btn:not(.active):hover { color:rgba(255,255,255,0.65); }
+.field-label {
+  display:block; font-size:0.63rem; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--mustard); font-weight:600; margin-bottom:0.4rem;
+}
+.field-input {
+  width:100%; background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.09); color:var(--white);
+  padding:0.85rem 1rem; font-family:'Epilogue',sans-serif;
+  font-size:0.88rem; font-weight:300; outline:none; resize:none;
+  transition:border-color 0.22s;
+}
+.field-input::placeholder { color:rgba(255,255,255,0.2); }
+.field-input:focus { border-color:var(--mustard); }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--black); padding:1.8rem 5.5rem;
+  display:flex; justify-content:space-between;
+  align-items:center; flex-wrap:wrap; gap:1rem;
+  border-top:1px solid rgba(236,176,26,0.12);
+}
+footer p { font-size:0.72rem; color:rgba(255,255,255,0.2); font-weight:300; }
+.footer-brand { font-family:'Syne',sans-serif; font-size:1rem; font-weight:800; color:rgba(236,176,26,0.4); }
+.footer-links { display:flex; gap:1.5rem; align-items:center; }
+.footer-links a {
+  font-size:0.7rem; color:rgba(255,255,255,0.2); text-decoration:none;
+  letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s;
+  display:flex; align-items:center; gap:0.4rem;
+}
+.footer-links a svg { width:14px; height:14px; fill:currentColor; }
+.footer-links a:hover { color:var(--mustard); }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease,transform 0.65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; }
+  .hero-left { padding:6rem 2rem 3rem; }
+  .hero-right { min-height:55vw; }
+  .proof-bar { padding:1.2rem 2rem; }
+  .section-wrap,.writing,.contact { padding:4rem 2rem; }
+  .services-intro,.about-grid,.contact-grid,.bilingual-grid,.should-categories { grid-template-columns:1fr; gap:2.5rem; }
+  .services-grid,.articles-row { grid-template-columns:1fr; }
+  .lang-grid { grid-template-columns:1fr 1fr; }
+  .creds-grid { grid-template-columns:1fr; }
+  .should,.bilingual { padding:4rem 2rem; }
+  footer { flex-direction:column; text-align:center; padding:1.5rem 2rem; }
+  .writing-header { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">Ever Mendoza</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#should">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-available">Available for work</div>
+    <h1 class="hero-name">Ever<br><span class="mustard">Mendoza</span></h1>
+    <p class="hero-tagline">
+      <strong>Websites, social media & digital presence</strong> for small businesses in Atlanta — built fast, priced fairly, in English and Spanish.
+    </p>
+    <p class="hero-tagline-es">Sitios web, redes sociales y presencia digital para negocios en Atlanta — rápido, justo, en inglés y español.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-mustard">Hire Me</a>
+      <a href="#services" class="btn btn-ghost">See Services & Prices</a>
+    </div>
+    <div class="hero-facts">
+      <div>
+        <div class="hero-fact-num">10+</div>
+        <div class="hero-fact-label">Years building<br>websites & brands</div>
+      </div>
+      <div>
+        <div class="hero-fact-num">4</div>
+        <div class="hero-fact-label">Languages<br>spoken</div>
+      </div>
+      <div>
+        <div class="hero-fact-num">🇵🇾→🇺🇸</div>
+        <div class="hero-fact-label">Based in<br>Atlanta, GA</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Swap with: <img src="hero.jpg" alt="Ever Mendoza" class="hero-photo"> -->
+    <div class="hero-photo-placeholder">
+      <div class="initials">EM</div>
+      <p>Jackson St. Bridge photo coming soon</p>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-location">📍 <span>Atlanta, GA</span> · Available now</div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item">Websites delivered in 1–5 days</div>
+  <div class="proof-item">English & Spanish</div>
+  <div class="proof-item">HTML · CSS · Canva · GitHub</div>
+  <div class="proof-item">10+ years experience</div>
+  <div class="proof-item">Atlanta-based · Start immediately</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services section-wrap" id="services">
+  <div class="services-intro">
+    <div>
+      <div class="section-label">Services & Pricing</div>
+      <h2 class="section-title">What I do<br>and what it costs</h2>
+    </div>
+    <p class="section-sub">No monthly platform fees, no agency markups. You get a real professional who builds it, explains it, and is reachable after it's done. Serving restaurants, gyms, nonprofits, and small businesses across Atlanta.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">🌐</span>
+      <div class="service-name">Website Design & Development</div>
+      <p class="service-desc">Custom websites built from scratch — no templates, no monthly fees. Fast, mobile-ready, and you own it completely.</p>
+      <p class="service-desc-es">Sitios web personalizados, rápidos y sin tarifas mensuales.</p>
+      <ul class="service-deliverables">
+        <li>Custom HTML/CSS — no WordPress bloat</li>
+        <li>Mobile responsive on all screens</li>
+        <li>Contact form + Google Maps embed</li>
+        <li>Basic SEO setup</li>
+        <li>Deployed on GitHub Pages (free hosting)</li>
+        <li>Delivered in 3–5 business days</li>
+      </ul>
+      <div class="service-price">From $500 <span>/ one-time payment</span></div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📱</span>
+      <div class="service-name">Social Media Management</div>
+      <p class="service-desc">Consistent, on-brand content for Instagram and Facebook. In English, Spanish, or both — no translator needed.</p>
+      <p class="service-desc-es">Contenido en inglés y español — sin necesidad de traductor.</p>
+      <ul class="service-deliverables">
+        <li>Monthly content calendar</li>
+        <li>Post design in Canva (8–12/month)</li>
+        <li>Captions written in EN + ES</li>
+        <li>Google Business Profile setup</li>
+        <li>Basic Facebook/Instagram ad setup</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <div class="service-price">From $300 <span>/ month</span></div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <div class="service-name">Digital Presence Audit</div>
+      <p class="service-desc">A full review of your website, social media, and Google listing — with a written action plan you can act on immediately.</p>
+      <p class="service-desc-es">Revisión completa de tu presencia digital con un plan de acción claro.</p>
+      <ul class="service-deliverables">
+        <li>Website speed & UX review</li>
+        <li>Google Business Profile check</li>
+        <li>Social media audit</li>
+        <li>Competitor comparison</li>
+        <li>Written action plan (PDF)</li>
+        <li>30-min video call walkthrough</li>
+      </ul>
+      <div class="service-price">$150 <span>/ one-time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOULD SECTION -->
+<section class="should" id="should">
+  <div class="section-label">This is what your website should look like</div>
+  <h2 class="section-title" style="color:var(--white);">You have a business.<br>Your website should show it.</h2>
+  <p class="should-sub">
+    Your customers are searching for you online right now. <strong>If your website doesn't show up, a competitor's does.</strong>
+    Below are the types of businesses and professionals I build for — click any to see what yours should look like.
+    <br><em>Tus clientes te buscan en línea ahora mismo. Tu sitio web debería estar listo.</em>
+  </p>
+  <div class="should-categories">
+    <div>
+      <div class="should-cat-label">Local Businesses · Negocios locales</div>
+      <div class="should-items">
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">🍽️</span>
+            <div>
+              <div class="should-item-name">Restaurant · Bar · Café</div>
+              <div class="should-item-name-es">Restaurante · Bar · Cafetería</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">✂️</span>
+            <div>
+              <div class="should-item-name">Barbershop · Salon · Spa</div>
+              <div class="should-item-name-es">Barbería · Salón · Spa</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">🔧</span>
+            <div>
+              <div class="should-item-name">Auto Parts · Car Wash · Mechanic</div>
+              <div class="should-item-name-es">Autopartes · Lavado · Mecánica</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="should-cat-label">Professionals · Profesionales</div>
+      <div class="should-items">
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">⚖️</span>
+            <div>
+              <div class="should-item-name">Lawyer · Law Firm</div>
+              <div class="should-item-name-es">Abogado · Firma legal</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">✈️</span>
+            <div>
+              <div class="should-item-name">Travel Agent · Tourism</div>
+              <div class="should-item-name-es">Agente de viajes · Turismo</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+        <div class="should-item">
+          <div class="should-item-left">
+            <span class="should-item-icon">💻</span>
+            <div>
+              <div class="should-item-name">Tech Repair · IT Services</div>
+              <div class="should-item-name-es">Reparación técnica · Servicios IT</div>
+            </div>
+          </div>
+          <span class="should-item-cta">See demo →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="should-bottom">
+    <p>Don't see your industry? <em>I build for any business.</em> If you have customers, you need a website that works as hard as you do.</p>
+    <a href="#contact" class="btn btn-dark">Let's talk about yours →</a>
+  </div>
+</section>
+
+<!-- BILINGUAL -->
+<section class="bilingual reveal" id="bilingual">
+  <div class="section-label">Bilingual Advantage</div>
+  <h2 class="section-title" style="color:var(--white);">Your customers speak Spanish.<br>So do I.</h2>
+  <div class="bilingual-grid">
+    <div class="bilingual-text">
+      <p>Atlanta has one of the fastest-growing Latino communities in the US. <strong>Most web developers can't reach that market.</strong> I build your website, write your content, and manage your social media in both English and Spanish — no translator, no extra cost.</p>
+      <p><em>Hablo tu idioma — vengas de México, España, Paraguay o de donde seas. Tu negocio merece llegar a todos.</em></p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <span class="lang-flags">🇺🇸</span>
+        <div class="lang-card-name">English</div>
+        <div class="lang-card-level">Fluent</div>
+      </div>
+      <div class="lang-card">
+        <span class="lang-flags">🇲🇽 🇪🇸 🇵🇾</span>
+        <div class="lang-card-name">Spanish</div>
+        <div class="lang-card-level">Native</div>
+        <div class="lang-card-note">Mexico · Spain · Paraguay</div>
+      </div>
+      <div class="lang-card">
+        <span class="lang-flags">🇧🇷</span>
+        <div class="lang-card-name">Portuguese</div>
+        <div class="lang-card-level">Fluent</div>
+      </div>
+      <div class="lang-card">
+        <span class="lang-flags">🇮🇹</span>
+        <div class="lang-card-name">Italian</div>
+        <div class="lang-card-level">Beginner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section-wrap" id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Who you're hiring</h2>
+  <div class="about-grid reveal">
+    <div class="about-photo-wrap">
+      <!-- Replace with: <img src="about.jpg" alt="Ever Mendoza" class="about-photo"> -->
+      <div class="about-photo-placeholder"><p>Photo</p></div>
+      <div class="about-badge">Atlanta, GA<br>Available Now</div>
+    </div>
+    <div class="about-content">
+      <p>I'm a web developer and digital marketing professional based in Atlanta, GA. I have 10+ years of hands-on experience building websites, managing social media, and developing digital strategies for businesses in Latin America and the US.</p>
+      <p>I hold a Bachelor's in Public Relations and I'm finishing a second degree in Computer Systems Analysis. I'm also a certified ESL English teacher and a licensed soccer referee — I mention these not as hobbies, but because they show <strong>I commit to things and follow through.</strong></p>
+      <p>I work fast, I'm reachable, and I deliver. <strong>If you need a website or digital presence built this week, let's talk.</strong></p>
+      <p class="es">Soy desarrollador web y profesional en marketing digital con base en Atlanta. Más de 10 años construyendo sitios web y estrategias digitales para negocios en América Latina y Estados Unidos. Trabajo rápido, estoy disponible y cumplo lo que prometo.</p>
+      <div class="creds-grid">
+        <div class="cred-item">
+          <div class="cred-title">B.A. Public Relations</div>
+          <div class="cred-sub">American University, Paraguay</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">ESL Certified Teacher</div>
+          <div class="cred-sub">English as a Second Language</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Licensed Soccer Referee</div>
+          <div class="cred-sub">Paraguay & United States</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Computer Systems Analysis</div>
+          <div class="cred-sub">In progress · Expected 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing" id="writing">
+  <div class="writing-header reveal">
+    <div>
+      <div class="section-label">Writing</div>
+      <h2 class="section-title">I write about what<br>I'm passionate about</h2>
+    </div>
+    <a href="https://medium.com/@evermendozapy" target="_blank" class="read-more">All articles on Medium →</a>
+  </div>
+  <div class="articles-row reveal">
+    <a href="https://medium.com/@evermendozapy/game-on-how-sports-franchises-rule-social-media-and-why-its-your-turn-5a70d273d6e4" target="_blank" class="article-item">
+      <div class="article-lang-tag">English · Social Media Marketing</div>
+      <div class="article-heading">How Sports Franchises Rule Social Media — and What Your Business Can Steal From Them</div>
+      <p class="article-snippet">Every platform is a different arena. Here's how to play to the home crowd, even without an NBA budget.</p>
+    </a>
+    <a href="https://medium.com/@evermendozapy/construye-tu-mundo-digital-identifica-y-diseña-tu-estrategia-de-marketing-9af5e369dcd8" target="_blank" class="article-item">
+      <div class="article-lang-tag">Español · Marketing Digital</div>
+      <div class="article-heading">Construye tu Mundo Digital: Identifica y Diseña tu Estrategia de Marketing</div>
+      <p class="article-snippet">Guía práctica para entender qué tipo de marketing necesita tu negocio y cómo empezar con las herramientas que ya tenés.</p>
+    </a>
+    <a href="https://medium.com/@evermendozapy/desaf%C3%ADo-running-2025-2-500-70c0cdcea80d" target="_blank" class="article-item">
+      <div class="article-lang-tag">Español · Comunidad</div>
+      <div class="article-heading">Desafío Running 2025: 2.500 corredores y una comunidad que corre junta</div>
+      <p class="article-snippet">Cobertura del evento de running más grande de Alto Paraná. Las historias de comunidad también merecen ser contadas.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section-wrap" id="contact">
+  <div class="section-label" style="color:var(--mustard);">Contact</div>
+  <h2 class="section-title">Let's get in<br>touch today!</h2>
+  <div class="contact-grid reveal">
+    <div class="contact-left">
+      <p>Available for <strong>freelance projects, full-time positions, and contract work</strong> in Atlanta and remotely. I respond the same day.</p>
+      <div class="contact-items">
+        <a href="tel:+16787131981" class="contact-item">
+          <!-- Phone icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          +1 (678) 713-1981
+        </a>
+        <a href="https://www.linkedin.com/in/evermendozapy" target="_blank" class="contact-item">
+          <!-- LinkedIn icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          linkedin.com/in/evermendozapy
+        </a>
+        <a href="https://github.com/evermendoza" target="_blank" class="contact-item">
+          <!-- GitHub icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          github.com/evermendoza
+        </a>
+        <a href="https://medium.com/@evermendozapy" target="_blank" class="contact-item">
+          <!-- Medium icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          medium.com/@evermendozapy
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+        <button class="lang-btn" onclick="setLang('es',this)">ES</button>
+      </div>
+      <div><label class="field-label" id="lbl-name">Your name</label><input type="text" class="field-input" id="f-name" placeholder="John Smith"></div>
+      <div><label class="field-label" id="lbl-email">Email</label><input type="email" class="field-input" id="f-email" placeholder="hello@yourbusiness.com"></div>
+      <div><label class="field-label" id="lbl-msg">What do you need?</label><textarea class="field-input" id="f-msg" rows="4" placeholder="I need a website for my restaurant..."></textarea></div>
+      <a href="tel:+16787131981" class="btn btn-mustard" id="btn-send" style="margin-top:0.5rem;display:inline-block;text-align:center;">Send Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Ever Mendoza</span>
+  <p>© 2026 · Atlanta, GA · Built with Claude.ai & GitHub Pages</p>
+  <div class="footer-links">
+    <a href="https://medium.com/@evermendozapy" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+      Medium
+    </a>
+    <a href="https://www.linkedin.com/in/evermendozapy" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/evermendoza" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="https://linktr.ee/evermendozapy" target="_blank">Linktree</a>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(el => obs.observe(el));
+
+// Bilingual contact form
+const copy = {
+  en: { name:'Your name', email:'Email', msg:'What do you need?', namePh:'John Smith', emailPh:'hello@yourbusiness.com', msgPh:'I need a website for my restaurant...', btn:'Send Message' },
+  es: { name:'Tu nombre', email:'Correo electrónico', msg:'¿Qué necesitás?', namePh:'Juan García', emailPh:'hola@tunegocio.com', msgPh:'Necesito una página web para mi restaurante...', btn:'Enviar mensaje' }
+};
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const t = copy[lang];
+  document.getElementById('lbl-name').textContent = t.name;
+  document.getElementById('lbl-email').textContent = t.email;
+  document.getElementById('lbl-msg').textContent = t.msg;
+  document.getElementById('f-name').placeholder = t.namePh;
+  document.getElementById('f-email').placeholder = t.emailPh;
+  document.getElementById('f-msg').placeholder = t.msgPh;
+  document.getElementById('btn-send').textContent = t.btn;
+}
+</script>
+</body>
+</html>
