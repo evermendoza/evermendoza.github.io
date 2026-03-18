@@ -83,7 +83,7 @@ nav {
 
 .hero-name {
   font-family:sans-serif;
-  font-size:clamp(3.2rem,6vw,5.8rem);
+  font-size:clamp(3.5rem,7vw,6.5rem);
   font-weight:800; color:var(--white);
   line-height:0.93; letter-spacing:-0.025em;
   margin-bottom:1.2rem;
@@ -92,7 +92,7 @@ nav {
 
 .hero-tagline {
   font-size:1.05rem; color:rgba(255,255,255,0.5);
-  font-weight:300; line-height:1.7; max-width:460px;
+  font-weight:300; line-height:1.7; max-width:540px;
   margin-bottom:0.6rem;
 }
 .hero-tagline strong { color:rgba(255,255,255,0.85); font-weight:500; }
@@ -100,7 +100,7 @@ nav {
 .hero-tagline-es {
   font-size:0.88rem; color:rgba(236,176,26,0.6);
   font-weight:300; font-style:italic;
-  max-width:460px; margin-bottom:2.5rem;
+  max-width:540px; margin-bottom:2.5rem;
 }
 
 .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem; }
@@ -372,15 +372,20 @@ nav {
   font-style:italic; border-left:2px solid var(--mustard);
   padding-left:1rem; margin-top:1.5rem;
 }
-.creds-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
-.cred-item {
-  background:var(--mustard); padding:1rem 1.2rem;
-}
-.cred-title {
-  font-family:sans-serif; font-size:0.8rem;
-  font-weight:800; color:var(--black); margin-bottom:0.2rem;
-}
-.cred-sub { font-size:0.7rem; color:rgba(0,0,0,0.55); font-weight:300; }
+
+/* EDUCATION & CERTS */
+.about-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; align-items:start; margin-top:3rem; }
+.edu-main { display:flex; gap:1.5rem; align-items:flex-start; margin-bottom:0; }
+.edu-photo-main { width:140px; height:170px; object-fit:cover; object-position:top; flex-shrink:0; }
+.edu-degree { font-size:0.88rem; font-weight:700; color:var(--navy); }
+.edu-school { font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:0.2rem; }
+.edu-year { font-size:0.72rem; color:var(--mustard); font-weight:600; letter-spacing:0.06em; margin-top:0.2rem; }
+.certs-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.cert-card { display:flex; flex-direction:column; gap:0; overflow:hidden; border:1px solid #e8e4dc; }
+.cert-photo { width:100%; height:120px; object-fit:cover; object-position:center top; }
+.cert-info { padding:0.8rem; background:var(--mustard); }
+.cert-title { font-size:0.78rem; font-weight:700; color:var(--black); }
+.cert-sub { font-size:0.68rem; color:rgba(0,0,0,0.55); font-weight:300; margin-top:0.2rem; }
 
 /* ── WRITING ── */
 .writing { background:var(--cream); padding:5.5rem 5.5rem; }
@@ -874,36 +879,51 @@ footer p { font-size:0.72rem; color:rgba(255,255,255,0.2); font-weight:300; }
 <section class="about section-wrap" id="about">
   <div class="section-label">About</div>
   <h2 class="section-title">Who you're hiring</h2>
-  <div class="about-grid reveal">
-    <div class="about-photo-wrap">
-      <img src="images/aboutgw.jpg" alt="Ever Mendoza" class="about-photo">
-      <!-- <div class="about-photo-placeholder"><p>Photo</p></div> -->
-      <div class="about-badge">Atlanta, GA<br>Available Now</div>
+  <div class="about-grid">
+
+    <!-- EDUCATION -->
+    <div class="about-education">
+      <div class="section-label" style="margin-bottom:1rem;">Education</div>
+      <div class="edu-main">
+        <img src="images/aboutgw.jpg" alt="Ever Mendoza Graduation" class="edu-photo-main">
+        <div class="edu-main-text">
+          <div class="edu-degree">B.A. Public Relations</div>
+          <div class="edu-school">American University · Paraguay</div>
+          <div class="edu-year">2020 – 2023</div>
+          <div class="edu-degree" style="margin-top:1.2rem;">Computer Systems Analysis</div>
+          <div class="edu-school">American University · Paraguay</div>
+          <div class="edu-year">2023 – 2026</div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section-label" style="margin-top:2.5rem; margin-bottom:1rem;">Certifications & Licenses</div>
+      <div class="certs-row">
+        <div class="cert-card">
+          <img src="images/teaching.png" alt="ESL Teaching" class="cert-photo">
+          <div class="cert-info">
+            <div class="cert-title">ESL Certified Teacher</div>
+            <div class="cert-sub">English Cultural Center · Paraguay</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <img src="images/referee.png" alt="Soccer Referee" class="cert-photo">
+          <div class="cert-info">
+            <div class="cert-title">Licensed Soccer Referee</div>
+            <div class="cert-sub">Paraguay & United States</div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- ABOUT TEXT -->
     <div class="about-content">
       <p>I'm a web developer and digital marketing professional based in Atlanta, GA. I have 10+ years of hands-on experience building websites, managing social media, and developing digital strategies for businesses in Latin America and the US.</p>
       <p>I hold a Bachelor's in Public Relations and I'm finishing a second degree in Computer Systems Analysis. I'm also a certified ESL English teacher and a licensed soccer referee — I mention these not as hobbies, but because they show <strong>I commit to things and follow through.</strong></p>
       <p>I work fast, I'm reachable, and I deliver. <strong>If you need a website or digital presence built this week, let's talk.</strong></p>
       <p class="es">Soy desarrollador web y profesional en marketing digital con base en Atlanta. Más de 10 años construyendo sitios web y estrategias digitales para negocios en América Latina y Estados Unidos. Trabajo rápido, estoy disponible y cumplo lo que prometo.</p>
-      <div class="creds-grid">
-        <div class="cred-item">
-          <div class="cred-title">B.A. Public Relations</div>
-          <div class="cred-sub">American University, Paraguay</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">ESL Certified Teacher</div>
-          <div class="cred-sub">English as a Second Language</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">Licensed Soccer Referee</div>
-          <div class="cred-sub">Paraguay & United States</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">Computer Systems Analysis</div>
-          <div class="cred-sub">In progress · Expected 2026</div>
-        </div>
-      </div>
     </div>
+
   </div>
 </section>
 
